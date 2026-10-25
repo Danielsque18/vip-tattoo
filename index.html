@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VIP Tattoo — тату-студия в Омске с 2007 года</title>
+<meta name="description" content="Тату-студия VIP Tattoo в Омске: татуировка любой сложности, бесплатный эскиз, перекрытие татуировок и шрамов, пирсинг, лазерное удаление. Пр. Карла Маркса, 32, ежедневно 11:00–20:00.">
+<meta name="theme-color" content="#f2f1ee">
+<meta property="og:type" content="website">
+<meta property="og:title" content="VIP Tattoo — тату-студия в Омске с 2007 года">
+<meta property="og:description" content="Татуировка любой сложности, бесплатный эскиз, пирсинг, перекрытия и лазерное удаление. Пр. Карла Маркса, 32.">
+<meta property="og:url" content="https://danielsque18.github.io/viptattoo/">
+<meta property="og:image" content="https://danielsque18.github.io/viptattoo/img/og.jpg">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="fonts/fonts.css?v=3">
+<script>/* страховка: если скрипты не отработали за 2,5 с — показываем весь текст и фото как есть */document.documentElement.classList.add('js');setTimeout(function(){var c=document.documentElement.classList;if(!c.contains('ready'))c.add('ready','safe');if(!c.contains('has-3d'))c.add('no-3d')},2500)</script>
+<link rel="stylesheet" href="style.css?v=20261025i">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TattooParlor","name":"VIP Tattoo","foundingDate":"2007","address":{"@type":"PostalAddress","streetAddress":"пр. Карла Маркса, 32","addressLocality":"Омск","addressCountry":"RU"},"telephone":"+7 3812 59-45-02","openingHours":"Mo-Su 11:00-20:00","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","ratingCount":"112"},"sameAs":["https://vk.com/viptattoo","https://t.me/vip_tattoo_omsk"]}</script>
+<script type="importmap">{"imports":{"three":"./lib/three.module.min.js"}}</script>
+<link rel="modulepreload" href="lib/three.module.min.js">
+<link rel="modulepreload" href="lib/RoomEnvironment.js">
+<link rel="modulepreload" href="machine.js?v=20261025g">
+<link rel="preload" as="image" href="img/machine.webp">
+</head>
+<body>
+
+<header class="top" id="top">
+  <a href="#hero" class="logo" aria-label="VIP Tattoo — наверх"><b>VIP</b><span>TATTOO</span></a>
+  <nav class="nav" aria-label="Разделы">
+    <a href="#works">Работы</a>
+    <a href="#cover">Перекрытия</a>
+    <a href="#piercing">Пирсинг</a>
+    <a href="#laser">Лазер</a>
+    <a href="#team">Команда</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <span class="top-open open" id="openTop" aria-live="polite"></span>
+  <a href="https://vk.me/viptattoo" class="btn btn-ink top-cta" target="_blank" rel="noopener">Записаться</a>
+  <span class="progress" aria-hidden="true"><i></i></span>
+  <button class="burger" type="button" aria-label="Меню" aria-expanded="false"><i></i><i></i></button>
+</header>
+
+<canvas id="gl" aria-hidden="true"></canvas>
+
+<main>
+
+<!-- ПЕРВЫЙ ЭКРАН: машинка крутится пальцем, прокрутка ведёт камеру к игле, из кончика открывается «портал» -->
+<section class="hero" id="hero">
+  <div class="hero-pin">
+    <div class="drag" id="drag" aria-hidden="true"></div>
+    <img class="machine-still" src="img/machine.webp" alt="" width="770" height="1093" fetchpriority="high">
+
+    <div class="h-intro">
+      <p class="kicker"><span class="dot"></span>Тату-студия в Омске · с 2007 года</p>
+      <h1 class="h1" data-split>Татуировка любой сложности</h1>
+      <p class="h-sub">Уникальный эскиз под вас — бесплатно. Перекрытие старых работ и шрамов, пирсинг, лазерное удаление.</p>
+      <div class="h-btns">
+        <a href="https://vk.me/viptattoo" class="btn btn-ink magnet" target="_blank" rel="noopener">Записаться на эскиз</a>
+        <a href="#works" class="btn btn-ghost magnet">Смотреть работы</a>
+      </div>
+    </div>
+    <p class="h-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.6M20 12a8 8 0 0 1-13.7 5.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18 3v4h-4M6 21v-4h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Покрутите машинку</p>
+    <p class="h-rate"><b>4,9</b><span>112 оценок<br>на Яндекс Картах</span></p>
+
+    <ul class="cos" aria-label="Коротко о студии">
+      <li class="co"><i class="co-l"></i><div class="co-t"><small>Стерильно</small><b>Автоклав и сухожар</b><span>Отдельная стерилизационная зона</span></div></li>
+      <li class="co"><i class="co-l"></i><div class="co-t"><small>Любой стиль</small><b>От графики до рукавов</b><span>Эскиз под человека и место на теле</span></div></li>
+      <li class="co"><i class="co-l"></i><div class="co-t"><small>С 2007 года</small><b>В центре Омска</b><span>Студия 250 м², своя парковка</span></div></li>
+      <li class="co"><i class="co-l"></i><div class="co-t"><small>Бесплатно</small><b>Эскиз под вас</b><span>Напишите идею — мастер нарисует</span></div></li>
+    </ul>
+
+    <div class="portal" aria-hidden="true">
+      <img src="img/w-peony.webp" alt="" width="734" height="1100">
+      <div class="portal-t"><small>Портфолио</small><b>Рисунок, который останется с&nbsp;вами</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- О СТУДИИ: текст проявляется по мере прокрутки -->
+<section class="about sec" id="about">
+  <p class="eyebrow">О студии</p>
+  <p class="fill" data-fill>VIP Tattoo — тату-студия в центре Омска с 2007 года. Рисуем эскиз под человека, перекрываем старые работы и шрамы, делаем пирсинг и сводим лазером то, что разлюбили.</p>
+  <div class="stats">
+    <div class="stat rv"><b>2007</b><span>год открытия студии</span></div>
+    <div class="stat rv"><b><i data-count="250">250</i> м²</b><span>студия в центре, своя парковка</span></div>
+    <div class="stat rv"><b>4,9</b><span>на Яндекс Картах, 112 оценок</span></div>
+    <div class="stat rv"><b><i data-count="23">23</i> тыс.</b><span>подписчиков во ВКонтакте</span></div>
+  </div>
+</section>
+
+<!-- РАБОТЫ -->
+<section class="works sec" id="works">
+  <div class="sec-head">
+    <div><p class="eyebrow">Портфолио</p><h2 class="h2" data-split>Работы мастеров</h2></div>
+    <a class="link" href="https://vk.com/albums-1252064" target="_blank" rel="noopener">Все работы во ВКонтакте <span>→</span></a>
+  </div>
+  <div class="grid">
+    <button class="tile t1" type="button" data-i="0"><img src="img/w-dragon-leg.webp" alt="Цветная татуировка: дракон на ноге" loading="lazy" width="733" height="1100"></button>
+    <button class="tile t2" type="button" data-i="1"><img src="img/w-ornament.webp" alt="Орнаментальная татуировка на груди" loading="lazy" width="621" height="1100"></button>
+    <button class="tile t3" type="button" data-i="2"><img src="img/w-landscape.webp" alt="Цветная татуировка: пейзаж на голени" loading="lazy" width="735" height="1100"></button>
+    <button class="tile t4" type="button" data-i="3"><img src="img/w-sleeve.webp" alt="Татуировка-рукав" loading="lazy" width="734" height="1100"></button>
+    <button class="tile t5" type="button" data-i="4"><img src="img/w-wolf.webp" alt="Реалистичная татуировка: волк" loading="lazy" width="825" height="1100"></button>
+    <button class="tile t6" type="button" data-i="5"><img src="img/w-dragon-hip.webp" alt="Татуировка: дракон на бедре" loading="lazy" width="734" height="1100"></button>
+    <button class="tile t7" type="button" data-i="6"><img src="img/w-floral.webp" alt="Татуировка: цветы на руке" loading="lazy" width="614" height="1100"></button>
+    <button class="tile t8" type="button" data-i="7"><img src="img/w-fox.webp" alt="Акварельная татуировка: лиса" loading="lazy" width="825" height="1100"></button>
+    <button class="tile t9" type="button" data-i="8"><img src="img/w-peony.webp" alt="Цветная татуировка: пионы на предплечье" loading="lazy" width="734" height="1100"></button>
+  </div>
+</section>
+
+<!-- ПЕРЕКРЫТИЯ -->
+<section class="cover sec" id="cover">
+  <div class="cover-text">
+    <p class="eyebrow">Перекрытия</p>
+    <h2 class="h2" data-split>Старая татуировка — не приговор</h2>
+    <p class="lead rv">Мастер подберёт рисунок, который закроет старую работу или шрам, и нарисует эскиз бесплатно.</p>
+    <blockquote class="quote rv">
+      <p>«Перебивала старое тату у Вероники. Это просто мастер с большой буквы! ❤️ Такого бомбического результата я не ожидала!!!! … Подобрала красивый рисунок и выполнила его качественно!!!»</p>
+      <cite>Мари · Яндекс Карты</cite>
+    </blockquote>
+  </div>
+  <div class="ba">
+    <figure class="ba-card ba-before"><img src="img/cover-before.webp" alt="Старая татуировка до перекрытия" loading="lazy" width="1054" height="954"><figcaption>Было</figcaption></figure>
+    <figure class="ba-card ba-after"><img src="img/cover-after.webp" alt="Татуировка с розами после перекрытия" loading="lazy" width="836" height="1100"><figcaption>Стало</figcaption></figure>
+  </div>
+</section>
+
+<!-- ЭСКИЗ -->
+<section class="sketch" id="sketch">
+  <div class="sec">
+    <div class="sec-head">
+      <div><p class="eyebrow">Как проходит</p><h2 class="h2" data-split>Эскиз — бесплатно</h2></div>
+      <p class="lead">Приходите с идеей — мастер превратит её в рисунок под вас.</p>
+    </div>
+    <ol class="steps">
+      <li class="rv"><b>01</b><h3>Идея</h3><p>Напишите администратору во ВКонтакте: что хотите, на каком месте и какого размера. Можно приложить картинки-примеры.</p></li>
+      <li class="rv"><b>02</b><h3>Эскиз</h3><p>Мастер рисует уникальный эскиз и обсуждает его с вами. Это бесплатно.</p></li>
+      <li class="rv"><b>03</b><h3>Сеанс</h3><p>Светлая студия 250 м², стерилизационная зона с автоклавом и сухожаром. Кофе и чай, пока ждёте.</p></li>
+      <li class="rv"><b>04</b><h3>Заживление</h3><p>Расскажем, как ухаживать за татуировкой. Заживляющая плёнка и средства по уходу есть в студии.</p></li>
+    </ol>
+    <a class="flash rv" href="https://vk.com/viptattoo" target="_blank" rel="noopener">
+      <span class="flash-k">Готовые эскизы</span>
+      <span class="flash-t">Авторские эскизы мастеров по фиксированной цене — размеры и цены на картинках, новые подборки в группе</span>
+      <span class="flash-a">Смотреть →</span>
+    </a>
+  </div>
+</section>
+
+<!-- ПИРСИНГ -->
+<section class="pierce sec" id="piercing">
+  <div class="pierce-grid">
+    <figure class="pg pg1"><img src="img/p-ear1.webp" alt="Пирсинг уха: несколько проколов" loading="lazy" width="825" height="1100"></figure>
+    <figure class="pg pg2"><img src="img/p-face.webp" alt="Пирсинг на лице" loading="lazy" width="825" height="1100"></figure>
+    <figure class="pg pg3"><img src="img/p-navel.webp" alt="Пирсинг пупка" loading="lazy" width="619" height="1100"></figure>
+    <figure class="pg pg4"><img src="img/p-ear2.webp" alt="Пирсинг уха с цепочкой" loading="lazy" width="825" height="1100"></figure>
+  </div>
+  <div class="pierce-text">
+    <p class="eyebrow">Пирсинг</p>
+    <h2 class="h2" data-split>Проколы, после которых хочется ещё</h2>
+    <ul class="plist rv">
+      <li>Все виды классических проколов</li>
+      <li>Интимный пирсинг</li>
+      <li>Установка микродермалов</li>
+      <li>Растяжка тоннелей</li>
+      <li>Замена украшения</li>
+    </ul>
+    <blockquote class="quote rv">
+      <p>«Пирсер Дарья иногда угощает чупачупсами и даёт пластырь с Микки Маусом) Респект всей команде!»</p>
+      <cite>Анастасия Дуб · Яндекс Карты</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ЛАЗЕР: тёмный блок, луч проходит и проявляет слова -->
+<section class="laser" id="laser">
+  <div class="laser-pin">
+    <i class="beam" aria-hidden="true"></i>
+    <div class="laser-in">
+      <p class="eyebrow">Лазерное удаление</p>
+      <h2 class="laser-h"><span>Сведём</span> <span>то, что</span> <span>разлюбили</span></h2>
+      <div class="laser-cols">
+        <p class="lead">Лазерное удаление и сведение татуировок и татуажа. Честно расскажем, сколько понадобится сеансов и какие нужны перерывы, и объясним уход после процедуры.</p>
+        <blockquote class="quote">
+          <p>«В вип тату: рассказали про лазеры, ОБЪЯСНИЛИ почему это мероприятие долгосрочное, сколько именно у меня займет времени эта процедура примерно. … Небо и земля!!! Станислав, спасибо!»</p>
+          <cite>Маруся · Яндекс Карты</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- КОМАНДА -->
+<section class="team" id="team">
+  <div class="sec team-head">
+    <div><p class="eyebrow">Команда</p><h2 class="h2" data-split>Мастера, к которым идут снова</h2></div>
+    <p class="lead">В отзывах чаще всего благодарят по именам: Веронику, Анастасию, Селину, Вячеслава, пирсера Дарью и Станислава — за лазер.</p>
+  </div>
+  <figure class="team-photo"><img src="img/team.webp" alt="Команда VIP Tattoo" loading="lazy" width="942" height="728"></figure>
+  <div class="names" aria-hidden="true"><div class="names-in"><span>Вероника</span><span>Анастасия</span><span>Селина</span><span>Вячеслав</span><span>Сабина</span><span>Дарья</span><span>Станислав</span><span>Вероника</span><span>Анастасия</span><span>Селина</span><span>Вячеслав</span><span>Сабина</span><span>Дарья</span><span>Станислав</span></div></div>
+</section>
+
+<!-- СТУДИЯ -->
+<section class="studio sec" id="studio">
+  <figure class="studio-photo"><img src="img/studio.webp" alt="Зал студии VIP Tattoo" loading="lazy" width="825" height="1100"></figure>
+  <div class="studio-text">
+    <p class="eyebrow">Студия</p>
+    <h2 class="h2" data-split>250 м² в центре города</h2>
+    <dl class="facts">
+      <div class="rv"><dt>Стерильность</dt><dd>Отдельная стерилизационная зона: автоклав и сухожар</dd></div>
+      <div class="rv"><dt>Пространство</dt><dd>Светлый опенспейс, у каждого мастера своё рабочее место</dd></div>
+      <div class="rv"><dt>Парковка</dt><dd>Своя парковка у здания на Карла Маркса, 32</dd></div>
+      <div class="rv"><dt>Пока ждёте</dt><dd>Кофе-машина, чай и администратор, который всё подскажет</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ОТЗЫВЫ -->
+<section class="reviews" id="reviews">
+  <div class="sec rev-head">
+    <div><p class="eyebrow">Отзывы</p><h2 class="h2" data-split>4,9 на Яндекс Картах</h2></div>
+    <p class="lead">112 оценок. Отзывы — как есть, без правок.</p>
+  </div>
+  <div class="marquee" id="revA"></div>
+  <div class="marquee mq-rev" id="revB"></div>
+  <p class="sec rev-more"><a class="link" href="https://yandex.ru/maps/org/vip_tattoo/110670428899/reviews/" target="_blank" rel="noopener">Все отзывы на Яндекс Картах <span>→</span></a></p>
+</section>
+
+<!-- ЗАПИСЬ -->
+<section class="contacts" id="contacts">
+  <div class="c-grid sec">
+    <div class="c-text">
+      <p class="eyebrow">Запись</p>
+      <h2 class="c-h" data-split>Начнём с эскиза</h2>
+      <p class="lead">Напишите идею — администратор подберёт мастера и время. Эскиз бесплатно.</p>
+      <div class="c-btns">
+        <a href="https://vk.me/viptattoo" class="btn btn-ink magnet" target="_blank" rel="noopener">Написать во ВКонтакте</a>
+        <a href="https://t.me/vip_tattoo_omsk" class="btn btn-ghost magnet" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
+    <img class="c-machine" src="img/machine.webp" alt="" loading="lazy" width="812" height="1200">
+  </div>
+  <div class="c-info sec">
+    <div><span>Адрес</span><b>Омск, пр. Карла Маркса, 32</b><a href="https://yandex.ru/maps/org/vip_tattoo/110670428899/" target="_blank" rel="noopener">Построить маршрут →</a> <button class="copy" type="button" data-copy="Омск, проспект Карла Маркса, 32">Скопировать адрес</button></div>
+    <div><span>Режим</span><b>Ежедневно 11:00–20:00</b><em class="open" id="open"></em></div>
+    <div><span>Телефоны</span><b><a href="tel:+73812594502">+7 (3812) 59-45-02</a><br><a href="tel:+79514099565">+7 (951) 409-95-65</a></b></div>
+    <div><span>Группа</span><b><a href="https://vk.com/viptattoo" target="_blank" rel="noopener">vk.com/viptattoo</a></b></div>
+  </div>
+  <div class="map sec" id="map"><button class="map-load" type="button">Показать карту</button></div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <a href="#hero" class="logo"><b>VIP</b><span>TATTOO</span></a>
+  <p>Тату-студия в Омске с 2007 года · сайт не собирает и не хранит ваши данные</p>
+  <p class="made">Демо-версия · <a href="https://danielsque18.github.io/portfolio/" target="_blank" rel="noopener">Сайт — Даниил Демьянов</a></p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Работа крупно">
+  <button class="lb-x" type="button" aria-label="Закрыть">×</button>
+  <button class="lb-prev" type="button" aria-label="Предыдущая">←</button>
+  <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">
+  <button class="lb-next" type="button" aria-label="Следующая">→</button>
+</div>
+
+<script src="lib/lenis.min.js"></script>
+<script src="main.js?v=20261025h"></script>
+<script type="module" src="machine.js?v=20261025g"></script>
+</body>
+</html>
