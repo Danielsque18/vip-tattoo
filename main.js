@@ -128,15 +128,6 @@ window.addEventListener('error', function () { var c = document.documentElement.
     });
   })();
 
-  /* ---------- карта Яндекса: грузится, когда до неё долистали (или по кнопке) ---------- */
-  (function () {
-    var box = document.getElementById('map'); if (!box) return;
-    var ll = '73.385746,54.960158';
-    function load() { if (box.dataset.on) return; box.dataset.on = 1; box.innerHTML = '<iframe src="https://yandex.ru/map-widget/v1/?ll=' + ll + '&z=16&pt=' + ll + ',pm2blm" title="VIP Tattoo на карте: пр. Карла Маркса, 32" loading="lazy" allowfullscreen></iframe>'; }
-    box.querySelector('.map-load').addEventListener('click', load);
-    new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { load(); o.disconnect(); } }, { rootMargin: '400px' }).observe(box);
-  })();
-
   /* ---------- копирование адреса ---------- */
   var toast = document.getElementById('toast');
   function say(t) { toast.textContent = t; toast.classList.add('on'); clearTimeout(say.t); say.t = setTimeout(function () { toast.classList.remove('on'); }, 2400); }

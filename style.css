@@ -242,11 +242,11 @@ main>section:not(.hero),.foot{position:relative;z-index:3;background:var(--bg)}
 .open::before{content:"";width:7px;height:7px;border-radius:50%;background:#b9b6b0}
 .open.is-open::before{background:#2f9e5b;box-shadow:0 0 0 4px rgba(47,158,91,.18)}
 
-/* ---------- карта ---------- */
-.map{padding-top:40px;padding-bottom:clamp(60px,8vw,100px)}
-.map iframe,.map-load{display:block;width:100%;height:clamp(320px,42vw,480px);border:0;border-radius:16px;box-shadow:0 30px 60px -40px rgba(0,0,0,.35)}
-.map iframe{filter:grayscale(.85) contrast(1.02)}
-.map-load{background:#dddcd7;font:500 16px var(--disp);color:var(--ink);cursor:pointer}
+/* ---------- карта (картинка Яндекса, по клику — Яндекс Карты) ---------- */
+.map{display:block;position:relative;padding-top:40px;padding-bottom:clamp(60px,8vw,100px);text-decoration:none}
+.map img{width:100%;height:clamp(300px,40vw,460px);object-fit:cover;border-radius:16px;filter:grayscale(.8) contrast(1.03);box-shadow:0 30px 60px -40px rgba(0,0,0,.35);transition:filter .5s}
+.map:hover img{filter:none}
+.map-pin{position:absolute;right:calc(var(--pad) + 18px);bottom:calc(clamp(60px,8vw,100px) + 18px);padding:12px 18px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:14.5px;font-weight:500}
 /* ---------- подвал ---------- */
 .foot{display:grid;justify-items:center;gap:8px;text-align:center;padding:56px var(--pad) 48px;color:var(--mute);font-size:13.5px;background:#e6e5e1!important;border-top:1px solid rgba(18,18,18,.08)}
 .foot .logo{color:var(--ink);margin-bottom:10px}
